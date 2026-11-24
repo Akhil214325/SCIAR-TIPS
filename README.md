@@ -40,9 +40,11 @@ How can a staff-facing tip view make the payout calculation more understandable 
 
 I also left out Declan's “100% of tips go to the team” and “Fully compliant with Irish tips law” (02-declan.md): card tips reach staff, but the €9,004.69 service charge goes to the house (takings.csv, service_charge_paid_to = house), so readers could misread it, and legal claims are not allowed.
 
-**Decision 2 – AI suggestion rejected:** [WRITE YOUR OWN: one thing ChatGPT suggested in your session that you rejected or changed. Say the options, your criteria, what decided it, and what would have changed your mind.]
+Decision 2 – AI market-scan suggestion
 
-**Bias – anchoring.** The precise “34% longer” figure (05-market-scan.md) stuck in my mind and I first planned the landing page around it, until I saw it had no source.
+I considered using the AI-generated 34% retention figure and the claim that Sciar was “only fully compliant”, but rejected both because no reliable sources supported them. A verifiable study and independent evidence could change my decision.
+
+Bias: I noticed automation bias when I initially trusted the precise 34% figure because it sounded authoritative, before checking its evidence.
 
 ## Part 4c: The Struggle
 
