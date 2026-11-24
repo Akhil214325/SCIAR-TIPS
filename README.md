@@ -11,26 +11,40 @@ How can a staff-facing tip view make the payout calculation more understandable 
 
 ## Part 1: The People
 
-Internal stakeholder – Aoife Rennick (CEO): “Make it work on a phone. Nearly all restaurant staff only have phones.” (04-aoife.md). External stakeholder – Rafael (kitchen porter): “i dont understand how they count it.” (01-rafael.md). Accessibility: Rafael's first language is Portuguese and his phone screen is broken. The build therefore uses a simple, mobile-first layout, clear figures and plain language. His concern can be recorded visibly on his device, with the storage limitation explained.
+**Internal – Aoife Rennick (CEO, Sciar):** “Make it work on a phone. Nearly all restaurant staff only have phones.” (04-aoife.md). Her need: a staff view that works on a phone before Friday's investor meeting.
+
+**External – Rafael (kitchen porter, Halloran's):** “i dont understand how they count it.” and “please dont say it was me who ask” (01-rafael.md). His need: to see how his payout is calculated, and to question it without being named.
+
+**Cultural difference and accessibility:** Rafael's first language is Portuguese and his phone screen is broken (01-rafael.md), so app.html uses large figures, short plain-English sentences and a one-line Portuguese summary.
 
 ## Part 4a: Theory Behind the Build
 
-Transformational leadership (Bass, 1985) helps explain Aoife's push for a phone-first alpha before investor meetings: she gives the team a clear direction and a deadline. However, this theory does not show whether less powerful staff have meaningful influence; investor urgency may discourage challenge. Schein's culture model (2010) distinguishes visible artefacts, espoused values and underlying assumptions. The owner-controlled points rule is an artefact, while Declan's statement that staff “don't need the formula” suggests an assumption that transparency may create conflict. Rafael's concern challenges that assumption. This shaped the dashboard: it explains the points rule, shows Rafael's own figures and provides a concern-record feature, while hiding individual colleague payouts. A more open culture could help Sciar differentiate through trust and stronger restaurant relationships. However, these theories cannot prove that the design will improve retention or establish that the split rule is fair.
+**Leadership – paternalistic leadership (Pellegrini & Scandura, 2008).** Declan sets the rule alone (“I've been in this trade 22 years”) and helps staff personally (Rafael's visa letter). This explains Rafael's loyalty and fear: “i dont want problem with Declan”. It misses the system: the rule, not Declan's kindness, decides that Rafael's after-23:00 hours earn nothing.
+
+**Culture – organisational silence (Morrison & Milliken, 2000).** Niamh says “Nobody has ever complained about the split. Not once in twelve weeks.” (03-niamh.md), but Rafael asked her and was told “is the system, is fair for everybody”. Silence is not agreement.
+
+**Design choice:** because of silence, concerns go to Sciar, not the owner or floor manager, and the page shows what Rafael cannot see: 34% of his hours earned no points.
+
+**Competitive advantage:** staff trust in the numbers is harder to copy than a payment pipe.
+
+**Limit:** neither theory says whether the rule is fair, only why nobody questions it.
 
 **References**
 
-- Bass, B. M. (1985). *Leadership and Performance Beyond Expectations*. Free Press.
-- Schein, E. H. (2010). *Organizational Culture and Leadership* (4th ed.). Jossey-Bass.
+- Morrison, E. W. and Milliken, F. J. (2000). Organizational silence: A barrier to change and development in a pluralistic world. *Academy of Management Review*, 25(4), 706–725.
+- Pellegrini, E. K. and Scandura, T. A. (2008). Paternalistic leadership: A review and agenda for future research. *Journal of Management*, 34(3), 566–593.
 
 ## Part 4b: Decision Record
 
-**Decision 1 – Declan's landing-page request.** The options were to publish claims such as “Fully compliant with Irish tips law” and “100% of tips go to the team”, or to omit them. I used accuracy, evidence and the risk of misleading restaurant owners as criteria. I omitted them because the pack contains no legal analysis and the recorded payout total (€31,754.09) differs from the card-tip pool (€31,754.13) by €0.04. The landing page still explains the weekly payout process, meeting the underlying need to communicate the product. Verified legal evidence and a reconciled accounting explanation could change my decision.
+**Decision 1 – Request refused: Niamh and Aoife asked me to remove the concern feature** (03-niamh.md; 04-aoife.md, point 3). Options: remove it; send concerns to owner and floor manager; send them to Sciar only. Criteria: a voice for the least powerful user, Rafael's privacy, owners not feeling attacked. Deciding factor: Rafael already went to Niamh and it did not help. I kept it, Sciar-only and simulated in the browser (stated on the page). Underlying need: there is no public “moaning wall”, and Sciar checks figures before raising anything with the owner. Would change my mind: evidence of a safe, independent route staff already use.
 
-**Decision 2 – AI market-scan suggestion.** I considered using or rejecting its 34% retention figure and “only fully compliant” claim. I rejected both because no supporting sources were provided. A verifiable primary study and independent legal review could change my decision.
+I also left out Declan's “100% of tips go to the team” and “Fully compliant with Irish tips law” (02-declan.md): card tips reach staff, but the €9,004.69 service charge goes to the house (takings.csv, service_charge_paid_to = house), so readers could misread it, and legal claims are not allowed.
 
-**Bias identified:** Confirmation and automation bias. I was initially attracted to the precise 34% figure because it sounded authoritative, before checking its evidence.
+**Decision 2 – AI suggestion rejected:** [WRITE YOUR OWN: one thing ChatGPT suggested in your session that you rejected or changed. Say the options, your criteria, what decided it, and what would have changed your mind.]
 
-## Part 4c: The Struggle (write this yourself – no AI)
+**Bias – anchoring.** The precise “34% longer” figure (05-market-scan.md) stuck in my mind and I first planned the landing page around it, until I saw it had no source.
+
+## Part 4c: The Struggle
 
 I created a website for Sciar Tips. It has a landing page for the business and a dashboard for staff. The project was not always easy. At first the dashboard did not display correctly, and an unwanted prototype warning kept appearing. I fixed these problems by correcting the HTML code and updating the files on GitHub. I used AI to help me understand the code and find ways to improve it. However, I did not just copy its suggestions. I checked them myself and tested them before using them. Through this work, I learned a lot about building websites and presenting data clearly. I also thought about employee privacy and why it is important to be open with staff about their data. If I did this project again, I would test it more carefully, improve the security, and make it more accessible on mobile phones.
 

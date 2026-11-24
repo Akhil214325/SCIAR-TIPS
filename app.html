@@ -158,6 +158,18 @@ footer {
 
 <main>
 
+<div class="card" style="margin-bottom:14px">
+  <p style="margin:0"><strong>Rafael</strong> · kitchen porter · staff ID S12 · weeks 1–12 (14 Aug – 5 Nov 2028)</p>
+  <p class="sub" style="margin:6px 0 0" lang="pt">Em português: aqui vê o seu pagamento de gorjetas de cada semana. As horas depois das 23:00 não contam pontos.</p>
+</div>
+
+<div class="card" style="margin-bottom:14px;border-left:6px solid var(--teal)">
+  <div class="label">What your Monday text does not show you</div>
+  <div class="value" id="lateShare">Loading...</div>
+  <div class="sub" id="lateShareText">of your hours earned no points, because they were after 23:00.</div>
+  <p class="sub" id="lateTrend" style="margin-top:8px"></p>
+</div>
+
 <section class="grid">
   <div class="card">
     <div class="label">Total tips paid to Rafael · 12 weeks</div>
@@ -177,6 +189,8 @@ footer {
     <div class="sub">These hours earn no points under the current rule</div>
   </div>
 </section>
+<p class="sub">Source for all figures above: data/payouts.csv · filter staff_id = S12 (Rafael) · weeks 1–12 (12 rows).
+Share of hours = sum of hours_after_2300 ÷ sum of hours.</p>
 
 <h2 class="section">Your weekly payout</h2>
 <div class="card table-wrap">
@@ -249,8 +263,14 @@ footer {
   </p>
 
   <p class="sub">
-    Entries are stored in this browser only. They are not
-    transmitted to Sciar or the restaurant.
+    <strong>Simulated:</strong> in this alpha, entries are stored in this browser only.
+    They are not sent to Sciar or the restaurant, and nobody else can see them.
+  </p>
+  <p class="sub">
+    <strong>Who would see it in a live version:</strong> you and the Sciar team only,
+    not the owner or the floor manager. Staff have asked not to be named when they
+    question a payout, so a concern goes to Sciar first, and Sciar checks the figures
+    before anything is raised with the restaurant.
   </p>
 
   <form id="concern">
@@ -304,7 +324,7 @@ if (typeof PAYOUTS === 'undefined' || !Array.isArray(PAYOUTS)) {
 } else {
 
   const rows = PAYOUTS
-    .filter(r => r.first_name === 'Rafael')
+    .filter(r => r.staff_id === 'S12')
     .sort((a,b) => Number(a.week)-Number(b.week));
 
   const sum = (arr,key) =>
@@ -318,6 +338,21 @@ if (typeof PAYOUTS === 'undefined' || !Array.isArray(PAYOUTS)) {
 
   document.getElementById('late').textContent =
     sum(rows,'hours_after_2300').toFixed(1);
+
+  const lateShare = sum(rows,'hours_after_2300') / sum(rows,'hours');
+  document.getElementById('lateShare').textContent =
+    Math.round(lateShare * 100) + '%';
+
+  const early = rows.filter(r => Number(r.week) <= 8);
+  const later = rows.filter(r => Number(r.week) >= 9);
+  const avg = (arr,key) => sum(arr,key) / arr.length;
+  if (early.length && later.length) {
+    document.getElementById('lateTrend').textContent =
+      'Weeks 1–8: on average ' + avg(early,'hours_after_2300').toFixed(1) +
+      ' hours after 23:00 a week, payout ' + money(avg(early,'tip_payout_eur')) + '. ' +
+      'Weeks 9–12: ' + avg(later,'hours_after_2300').toFixed(1) +
+      ' hours after 23:00 a week, payout ' + money(avg(later,'tip_payout_eur')) + '.';
+  }
 
   weeklyBody.innerHTML = rows.map(r => `
     <tr>
