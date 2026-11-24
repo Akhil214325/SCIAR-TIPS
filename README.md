@@ -31,11 +31,8 @@ Transformational leadership (Bass, 1985) helps explain Aoife's push for a phone-
 
 ## Part 4c: The Struggle (write this yourself – no AI)
 
-**Do not submit this instruction as your reflection.** Write 100–150 words in your own words, without AI assistance. Your reflection must explain:
+I created a website for Sciar Tips. It has a landing page for the business and a dashboard for staff. The project was not always easy. At first the dashboard did not display correctly, and an unwanted prototype warning kept appearing. I fixed these problems by correcting the HTML code and updating the files on GitHub. I used AI to help me understand the code and find ways to improve it. However, I did not just copy its suggestions. I checked them myself and tested them before using them. Through this work, I learned a lot about building websites and presenting data clearly. I also thought about employee privacy and why it is important to be open with staff about their data. If I did this project again, I would test it more carefully, improve the security, and make it more accessible on mobile phones.
 
-- What you tried while building the website.
-- What broke or did not work as expected.
-- One AI output you personally checked or corrected.
-- What you would do differently next time.
-- At least one actual Git commit hash from your repository.
+
+
 
