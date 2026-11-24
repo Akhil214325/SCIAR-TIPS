@@ -1,56 +1,429 @@
+
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Sciar Tips · Staff view</title>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sciar Tips | Staff Dashboard</title>
+
 <style>
-:root{--ink:#17252b;--muted:#607078;--paper:#f4f7f6;--card:#fff;--line:#dce5e2;--teal:#087e75;--gold:#f0b84b}
-*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.5 system-ui,-apple-system,Segoe UI,sans-serif}
-header{background:#102c31;color:#fff;padding:24px max(20px,calc((100% - 980px)/2))}header small{color:#b9d7d2;letter-spacing:.12em;text-transform:uppercase}header h1{margin:5px 0;font-size:30px}header p{margin:0;color:#d6e6e3}
-main{max-width:980px;margin:24px auto;padding:0 18px}.notice{background:#fff7df;border:1px solid #eed89b;padding:12px 14px;border-radius:12px;margin-bottom:18px}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;box-shadow:0 3px 14px #183b3510}
-.label{color:var(--muted);font-size:13px}.value{font-size:27px;font-weight:750;margin-top:5px}.sub{color:var(--muted);font-size:13px}.section{margin:24px 0 12px;font-size:20px}
-table{width:100%;border-collapse:collapse;font-size:14px}th,td{text-align:left;padding:10px 8px;border-bottom:1px solid var(--line)}th{color:var(--muted);font-weight:600}td:last-child,th:last-child{text-align:right}
-select,input,textarea,button{font:inherit;border-radius:10px;border:1px solid #cbd8d4;padding:11px;width:100%}textarea{min-height:100px;resize:vertical}button{background:var(--teal);color:white;border:0;font-weight:700;cursor:pointer;margin-top:10px}
-.row{display:grid;grid-template-columns:1fr 1fr;gap:14px}.tag{display:inline-block;background:#e4f3ef;color:#12675e;border-radius:30px;padding:3px 9px;font-size:12px}
-footer{color:var(--muted);font-size:12px;padding:20px 0 40px}
-@media(max-width:650px){.grid{grid-template-columns:1fr}.row{grid-template-columns:1fr}header h1{font-size:25px}main{margin-top:15px}.card{padding:15px}table{font-size:13px}}
-</style></head><body>
-<header><small>SCIAR TIPS · HALLORAN'S PILOT</small><h1>Your tips, clearly shown.</h1><p>A personal view of your weekly card-tip payouts.</p></header>
+:root {
+  --ink:#17252b;
+  --muted:#607078;
+  --paper:#f4f7f6;
+  --card:#fff;
+  --line:#dce5e2;
+  --teal:#087e75;
+}
+
+* { box-sizing:border-box; }
+
+body {
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font:16px/1.5 system-ui,-apple-system,Segoe UI,sans-serif;
+}
+
+header {
+  background:#102c31;
+  color:#fff;
+  padding:24px max(20px,calc((100% - 980px)/2));
+}
+
+header small {
+  color:#b9d7d2;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+}
+
+header h1 {
+  margin:5px 0;
+  font-size:30px;
+}
+
+header p {
+  margin:0;
+  color:#d6e6e3;
+}
+
+main {
+  max-width:980px;
+  margin:24px auto;
+  padding:0 18px;
+}
+
+.grid {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:14px;
+}
+
+.card {
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:16px;
+  padding:18px;
+  box-shadow:0 3px 14px #183b3510;
+}
+
+.label {
+  color:var(--muted);
+  font-size:13px;
+}
+
+.value {
+  font-size:27px;
+  font-weight:750;
+  margin-top:5px;
+}
+
+.sub {
+  color:var(--muted);
+  font-size:13px;
+}
+
+.section {
+  margin:24px 0 12px;
+  font-size:20px;
+}
+
+table {
+  width:100%;
+  border-collapse:collapse;
+  font-size:14px;
+}
+
+th,td {
+  text-align:left;
+  padding:10px 8px;
+  border-bottom:1px solid var(--line);
+}
+
+th {
+  color:var(--muted);
+  font-weight:600;
+}
+
+td:last-child,th:last-child {
+  text-align:right;
+}
+
+select,input,textarea,button {
+  font:inherit;
+  border-radius:10px;
+  border:1px solid #cbd8d4;
+  padding:11px;
+  width:100%;
+}
+
+textarea {
+  min-height:100px;
+  resize:vertical;
+}
+
+button {
+  background:var(--teal);
+  color:white;
+  border:0;
+  font-weight:700;
+  cursor:pointer;
+  margin-top:10px;
+}
+
+footer {
+  color:var(--muted);
+  font-size:12px;
+  padding:20px 0 40px;
+}
+
+@media(max-width:650px) {
+  .grid { grid-template-columns:1fr; }
+  header h1 { font-size:25px; }
+  main { margin-top:15px; }
+  .card { padding:15px; }
+  table { font-size:13px; }
+  .table-wrap { overflow-x:auto; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <small>SCIAR TIPS · HALLORAN'S PILOT</small>
+  <h1>Your tips, clearly shown.</h1>
+  <p>A personal view of your weekly card-tip payouts.</p>
+</header>
+
 <main>
 
 <section class="grid">
-<div class="card"><div class="label">Total tips paid to Rafael · 12 weeks</div><div class="value" id="total">—</div><div class="sub">Sum of his recorded weekly payouts</div></div>
-<div class="card"><div class="label">Hours worked</div><div class="value" id="hours">—</div><div class="sub">Including hours after 23:00</div></div>
-<div class="card"><div class="label">Hours after 23:00</div><div class="value" id="late">—</div><div class="sub">These hours earn no points under the current rule</div></div>
+  <div class="card">
+    <div class="label">Total tips paid to Rafael · 12 weeks</div>
+    <div class="value" id="total">Loading...</div>
+    <div class="sub">Sum of his recorded weekly payouts</div>
+  </div>
+
+  <div class="card">
+    <div class="label">Hours worked</div>
+    <div class="value" id="hours">Loading...</div>
+    <div class="sub">Including hours after 23:00</div>
+  </div>
+
+  <div class="card">
+    <div class="label">Hours after 23:00</div>
+    <div class="value" id="late">Loading...</div>
+    <div class="sub">These hours earn no points under the current rule</div>
+  </div>
 </section>
+
 <h2 class="section">Your weekly payout</h2>
-<div class="card"><table><thead><tr><th>Week starting</th><th>Hours</th><th>After 23:00</th><th>Points</th><th>Payout</th></tr></thead><tbody id="weekly"></tbody></table></div>
-<h2 class="section">A wider view · role averages</h2>
-<div class="card"><p class="sub">Only roles with at least three people are shown. Individual colleague figures are not displayed.</p><table><thead><tr><th>Role</th><th>People</th><th>Eligible hours</th><th>Tips per eligible hour</th></tr></thead><tbody id="roles"></tbody></table>
-<p class="sub">Calculation: sum of tip_payout_eur ÷ sum of (hours − hours_after_2300), grouped by role, across weeks 1–12. Source: <code>data/payouts.csv</code>. Roles with fewer than three distinct staff IDs are suppressed.</p></div>
+<div class="card table-wrap">
+  <table>
+    <thead>
+      <tr>
+        <th>Week starting</th>
+        <th>Hours</th>
+        <th>After 23:00</th>
+        <th>Points</th>
+        <th>Payout</th>
+      </tr>
+    </thead>
+    <tbody id="weekly"></tbody>
+  </table>
+</div>
+
+<h2 class="section">A wider view · Role averages</h2>
+<div class="card">
+  <p class="sub">
+    Only roles with at least three people are shown.
+    Individual colleague figures are not displayed.
+  </p>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Role</th>
+          <th>People</th>
+          <th>Eligible hours</th>
+          <th>Tips per eligible hour</th>
+        </tr>
+      </thead>
+      <tbody id="roles"></tbody>
+    </table>
+  </div>
+
+  <p class="sub">
+    Calculation: sum of tip_payout_eur divided by
+    sum of (hours − hours_after_2300), grouped by role,
+    across weeks 1–12. Source: data/payouts.csv.
+    Roles with fewer than three distinct staff IDs are suppressed.
+  </p>
+</div>
+
 <h2 class="section">How the current rule works</h2>
-<div class="card"><p>Each week's card tips form one pool. Points are awarded for hours before 23:00: floor manager 1.5 points/hour; server and bar 1 point/hour; chef 0.5 points/hour; kitchen porter 0.25 points/hour. A payout is the weekly pool multiplied by an employee's points and divided by all points that week. The owner sets the rule.</p><p class="sub">The current rule excludes hours after 23:00. This dashboard makes that effect visible; it does not decide whether the rule is fair.</p></div>
+<div class="card">
+  <p>
+    Each week's card tips form one pool. Points are awarded
+    for hours before 23:00: floor manager 1.5 points/hour;
+    server and bar 1 point/hour; chef 0.5 points/hour;
+    kitchen porter 0.25 points/hour. A payout is the weekly
+    pool multiplied by an employee's points and divided by
+    all points that week. The owner sets the rule.
+  </p>
+
+  <p class="sub">
+    The current rule excludes hours after 23:00.
+    This dashboard makes that effect visible; it does not
+    decide whether the rule is fair.
+  </p>
+</div>
+
 <h2 class="section">Raise a concern</h2>
-<div class="card"><p>Use this private-device prototype to record a question or concern about your payout. You will see the saved entry on this device. This is simulated local browser storage: it is not sent to Sciar or the restaurant.</p>
-<form id="concern"><label for="message">Your concern</label><textarea id="message" required maxlength="1000" placeholder="Tell us what you would like checked..."></textarea><button type="submit">Save concern on this device</button></form>
-<div id="status" role="status" aria-live="polite" class="sub"></div><h3>Your saved concern record</h3><div id="records" class="sub">No concerns saved on this device.</div></div>
+<div class="card">
+  <p>
+    Use this section to record a question or concern about
+    your payout. Your saved entry will appear on this device.
+  </p>
+
+  <p class="sub">
+    Entries are stored in this browser only. They are not
+    transmitted to Sciar or the restaurant.
+  </p>
+
+  <form id="concern">
+    <label for="message">Your concern</label>
+    <textarea
+      id="message"
+      required
+      maxlength="1000"
+      placeholder="Tell us what you would like checked..."
+    ></textarea>
+    <button type="submit">Save concern</button>
+  </form>
+
+  <div id="status" role="status" aria-live="polite" class="sub"></div>
+
+  <h3>Your saved concern record</h3>
+  <div id="records" class="sub">No concerns saved on this device.</div>
+</div>
+
 <footer>
-  Sciar Tips | Staff Dashboard | Teaching case study | Data source: supplied Sciar pilot pack | Amounts in EUR.
-  Concern entries are stored locally on this device and are not transmitted to the restaurant.
+  Sciar Tips | Staff Dashboard | NCI teaching case study |
+  Data source: supplied Sciar pilot pack | Amounts in EUR.
+  Concern entries are stored locally on this device.
 </footer>
+
 </main>
-<script src="data/payouts.js"></script><script>
-const money=n=>new Intl.NumberFormat('en-IE',{style:'currency',currency:'EUR'}).format(n);
-const rows=PAYOUTS.filter(r=>r.first_name==='Rafael').sort((a,b)=>Number(a.week)-Number(b.week));
-const sum=(a,k)=>a.reduce((s,r)=>s+Number(r[k]||0),0);
-document.getElementById('total').textContent=money(sum(rows,'tip_payout_eur'));
-document.getElementById('hours').textContent=sum(rows,'hours').toFixed(1);
-document.getElementById('late').textContent=sum(rows,'hours_after_2300').toFixed(1);
-document.getElementById('weekly').innerHTML=rows.map(r=>`<tr><td>${r.week_start}</td><td>${Number(r.hours).toFixed(1)}</td><td>${Number(r.hours_after_2300).toFixed(1)}</td><td>${Number(r.points).toFixed(2)}</td><td>${money(Number(r.tip_payout_eur))}</td></tr>`).join('');
-const grouped={}; PAYOUTS.forEach(r=>{const k=r.role;(grouped[k]??={ids:new Set(),payout:0,eligible:0}).ids.add(r.staff_id);grouped[k].payout+=Number(r.tip_payout_eur);grouped[k].eligible+=Number(r.hours)-Number(r.hours_after_2300)});
-document.getElementById('roles').innerHTML=Object.entries(grouped).filter(([k,g])=>g.ids.size>=3).map(([k,g])=>`<tr><td>${k}</td><td>${g.ids.size}</td><td>${g.eligible.toFixed(1)}</td><td>${money(g.payout/g.eligible)}</td></tr>`).join('');
-const key='sciar-demo-concerns-rafael';
-function showRecords(){const a=JSON.parse(localStorage.getItem(key)||'[]');document.getElementById('records').innerHTML=a.length?a.map(x=>`<p><strong>${x.time}</strong><br>${escapeHtml(x.message)}</p>`).join(''):'No concerns saved on this device.'}
-function escapeHtml(s){return s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
-document.getElementById('concern').addEventListener('submit',e=>{e.preventDefault();const message=document.getElementById('message').value.trim();if(!message)return;const a=JSON.parse(localStorage.getItem(key)||'[]');a.unshift({time:new Date().toLocaleString(),message});localStorage.setItem(key,JSON.stringify(a));document.getElementById('message').value='';document.getElementById('status').textContent='Saved on this device. No one else can see it through this prototype.';showRecords()});
+
+<script src="data/payouts.js"></script>
+
+<script>
+const money = n =>
+  new Intl.NumberFormat('en-IE', {
+    style:'currency',
+    currency:'EUR'
+  }).format(n);
+
+const weeklyBody = document.getElementById('weekly');
+const roleBody = document.getElementById('roles');
+
+if (typeof PAYOUTS === 'undefined' || !Array.isArray(PAYOUTS)) {
+  document.getElementById('total').textContent = 'Data unavailable';
+  document.getElementById('hours').textContent = '—';
+  document.getElementById('late').textContent = '—';
+
+  weeklyBody.innerHTML =
+    '<tr><td colspan="5">Unable to load payout data. Please check data/payouts.js.</td></tr>';
+
+  roleBody.innerHTML =
+    '<tr><td colspan="4">Role data unavailable.</td></tr>';
+
+} else {
+
+  const rows = PAYOUTS
+    .filter(r => r.first_name === 'Rafael')
+    .sort((a,b) => Number(a.week)-Number(b.week));
+
+  const sum = (arr,key) =>
+    arr.reduce((s,r) => s + Number(r[key] || 0),0);
+
+  document.getElementById('total').textContent =
+    money(sum(rows,'tip_payout_eur'));
+
+  document.getElementById('hours').textContent =
+    sum(rows,'hours').toFixed(1);
+
+  document.getElementById('late').textContent =
+    sum(rows,'hours_after_2300').toFixed(1);
+
+  weeklyBody.innerHTML = rows.map(r => `
+    <tr>
+      <td>${r.week_start}</td>
+      <td>${Number(r.hours).toFixed(1)}</td>
+      <td>${Number(r.hours_after_2300).toFixed(1)}</td>
+      <td>${Number(r.points).toFixed(2)}</td>
+      <td>${money(Number(r.tip_payout_eur))}</td>
+    </tr>
+  `).join('');
+
+  const grouped = {};
+
+  PAYOUTS.forEach(r => {
+    const k = r.role;
+
+    if (!grouped[k]) {
+      grouped[k] = {
+        ids:new Set(),
+        payout:0,
+        eligible:0
+      };
+    }
+
+    grouped[k].ids.add(r.staff_id);
+    grouped[k].payout += Number(r.tip_payout_eur);
+    grouped[k].eligible +=
+      Number(r.hours) - Number(r.hours_after_2300);
+  });
+
+  roleBody.innerHTML = Object.entries(grouped)
+    .filter(([k,g]) => g.ids.size >= 3 && g.eligible > 0)
+    .map(([k,g]) => `
+      <tr>
+        <td>${k}</td>
+        <td>${g.ids.size}</td>
+        <td>${g.eligible.toFixed(1)}</td>
+        <td>${money(g.payout/g.eligible)}</td>
+      </tr>
+    `).join('');
+}
+
+/* Concern record storage */
+
+const key = 'sciar-demo-concerns-rafael';
+
+function escapeHtml(s) {
+  return s.replace(/[&<>"']/g,c => ({
+    '&':'&amp;',
+    '<':'&lt;',
+    '>':'&gt;',
+    '"':'&quot;',
+    "'":'&#39;'
+  }[c]));
+}
+
+function showRecords() {
+  const records = document.getElementById('records');
+
+  try {
+    const saved = JSON.parse(localStorage.getItem(key) || '[]');
+
+    records.innerHTML = saved.length
+      ? saved.map(x => `
+          <p>
+            <strong>${escapeHtml(x.time)}</strong><br>
+            ${escapeHtml(x.message)}
+          </p>
+        `).join('')
+      : 'No concerns saved on this device.';
+
+  } catch (error) {
+    records.textContent = 'Saved records could not be displayed.';
+  }
+}
+
+document.getElementById('concern').addEventListener('submit',e => {
+  e.preventDefault();
+
+  const message = document.getElementById('message').value.trim();
+  if (!message) return;
+
+  try {
+    const saved = JSON.parse(localStorage.getItem(key) || '[]');
+
+    saved.unshift({
+      time:new Date().toLocaleString(),
+      message
+    });
+
+    localStorage.setItem(key,JSON.stringify(saved));
+
+    document.getElementById('message').value = '';
+    document.getElementById('status').textContent =
+      'Your concern has been saved on this device.';
+
+    showRecords();
+
+  } catch (error) {
+    document.getElementById('status').textContent =
+      'Unable to save. Browser storage may be unavailable.';
+  }
+});
+
 showRecords();
-</script></body></html>
+</script>
+
+</body>
+</html>
