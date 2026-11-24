@@ -33,7 +33,10 @@ footer{color:var(--muted);font-size:12px;padding:20px 0 40px}
 <div class="card"><p>Use this private-device prototype to record a question or concern about your payout. You will see the saved entry on this device. This is simulated local browser storage: it is not sent to Sciar or the restaurant.</p>
 <form id="concern"><label for="message">Your concern</label><textarea id="message" required maxlength="1000" placeholder="Tell us what you would like checked..."></textarea><button type="submit">Save concern on this device</button></form>
 <div id="status" role="status" aria-live="polite" class="sub"></div><h3>Your saved concern record</h3><div id="records" class="sub">No concerns saved on this device.</div></div>
-<footer>Fictional case study · Data source: supplied Sciar pilot pack · Amounts in EUR. This is a prototype, not a payment record or employment advice.</footer>
+<footer>
+  Sciar Tips | Staff Dashboard | Teaching case study | Data source: supplied Sciar pilot pack | Amounts in EUR.
+  Concern entries are stored locally on this device and are not transmitted to the restaurant.
+</footer>
 </main>
 <script src="data/payouts.js"></script><script>
 const money=n=>new Intl.NumberFormat('en-IE',{style:'currency',currency:'EUR'}).format(n);
