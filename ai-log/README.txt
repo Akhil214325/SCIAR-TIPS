@@ -1,1 +1,1 @@
-Add your actual AI session exports, share links or screenshots here. Do not claim this placeholder is session evidence. Redact personal details if necessary and state what was redacted.
+AI LINK ; https://chatgpt.com/share/6b05c22b-a59c-83ee-b582-f51a2beda7fd
