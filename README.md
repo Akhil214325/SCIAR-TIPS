@@ -1,4 +1,4 @@
-<img width="1857" height="797" alt="1" src="https://github.com/user-attachments/assets/72be9edd-9163-45a9-8373-f9e7e9764cc5" />
+
 # Sciar Tips – CA2 Submission
 
 **GitHub Pages:** https://akhil214325.github.io/SCIAR-TIPS/
