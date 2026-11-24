@@ -1,3 +1,4 @@
+<img width="1857" height="797" alt="1" src="https://github.com/user-attachments/assets/72be9edd-9163-45a9-8373-f9e7e9764cc5" />
 # Sciar Tips – CA2 Submission
 
 **GitHub Pages:** https://akhil214325.github.io/SCIAR-TIPS/
@@ -33,6 +34,10 @@ Transformational leadership (Bass, 1985) helps explain Aoife's push for a phone-
 
 I created a website for Sciar Tips. It has a landing page for the business and a dashboard for staff. The project was not always easy. At first the dashboard did not display correctly, and an unwanted prototype warning kept appearing. I fixed these problems by correcting the HTML code and updating the files on GitHub. I used AI to help me understand the code and find ways to improve it. However, I did not just copy its suggestions. I checked them myself and tested them before using them. Through this work, I learned a lot about building websites and presenting data clearly. I also thought about employee privacy and why it is important to be open with staff about their data. If I did this project again, I would test it more carefully, improve the security, and make it more accessible on mobile phones.
 
+<img width="1481" height="838" alt="4" src="https://github.com/user-attachments/assets/2092c603-a681-478d-a55d-85636efdc5fb" />
+<img width="1467" height="882" alt="3" src="https://github.com/user-attachments/assets/dc649940-d2df-4820-8d2d-6b45067273b4" />
+<img width="1728" height="797" alt="2" src="https://github.com/user-attachments/assets/fd2bb3c1-b14f-4f79-aac0-80ef779f33f0" />
+<img width="1857" height="797" alt="1" src="https://github.com/user-attachments/assets/1475af54-b812-488e-9f9e-13aa5af27f56" />
 
 
 
