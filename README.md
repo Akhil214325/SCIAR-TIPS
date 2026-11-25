@@ -48,9 +48,7 @@ Bias: I noticed automation bias when I initially trusted the precise 34% figure 
 
 ## Part 4c: The Struggle
 
-I created a website for Sciar Tips with a business landing page and a staff dashboard. While working on it, I faced some difficulties with the dashboard display and an unwanted prototype warning. I fixed the HTML code and updated the website on GitHub. I used AI to help me understand the code and improve some parts of the website, but I checked the suggestions before using them instead of trusting everything automatically. Through this project, I learned more about website development, presenting data clearly, employee privacy, and transparency. If I had more time, I would improve the website by testing it more thoroughly, adding better security, and making the dashboard easier to use on mobile devices.Some commit hashes are9b94b4b: renamed index (3).html to index.html
-63ec088: added the ChatGPT screenshots to ai-log
-a30458d: first upload of your files
+I created a website for Sciar Tips with a business landing page and a staff dashboard. While working on it, I faced some difficulties with the dashboard display and an unwanted prototype warning. I fixed the HTML code and updated the website on GitHub. I used AI to help me understand the code and improve some parts of the website, but I checked the suggestions before using them instead of trusting everything automatically. Through this project, I learned more about website development, presenting data clearly, employee privacy, and transparency. If I had more time, I would improve the website by testing it more thoroughly, adding better security, and making the dashboard easier to use on mobile devices. When I changed index (3).html to index.html the commit hash was 9b94b4b,when i addes screenshots to ai log 63ec088 and first upload of the files a30458d these were the commits
 
 <img width="1481" height="838" alt="4" src="https://github.com/user-attachments/assets/2092c603-a681-478d-a55d-85636efdc5fb" />
 <img width="1467" height="882" alt="3" src="https://github.com/user-attachments/assets/dc649940-d2df-4820-8d2d-6b45067273b4" />
